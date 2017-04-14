@@ -74,12 +74,10 @@ public class Solver implements Runnable {
 				
 				if (path == null) continue;
 				
-				StringBuilder twists = new StringBuilder();
 				Iterator<Twist> iterator = path.iterator();
 				
 				while (iterator.hasNext()) {
 					Twist twist = iterator.next();
-					twists.append(twist.toString() + " ");
 					cube.turn(twist);
 					solution.add(twist);
 				}

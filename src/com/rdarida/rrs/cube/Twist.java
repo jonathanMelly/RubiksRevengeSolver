@@ -5,7 +5,7 @@ public enum Twist {
 	U2, R2, F2, D2, L2, B2, u2, r2, f2, d2, l2, b2,
 	U_, R_, F_, D_, L_, B_, u_, r_, f_, d_, l_, b_;
 	
-	private static final int NUM_UNIQUE_TWIST = 12;
+	public static final int NUM_UNIQUE_TWIST = 12;
 	
 	private static final int[] UP = {
 		67,19,35,51, 66,18,34,50, 65,17,33,49, 64,16,32,48,
