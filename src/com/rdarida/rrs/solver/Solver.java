@@ -98,8 +98,31 @@ public class Solver implements Runnable {
 		}
 	}
 	
-	protected ArrayList<Twist> postProcess(ArrayList<Twist> solution) {
-		return solution;
+	private ArrayList<Twist> postProcess(ArrayList<Twist> solution) {
+		ArrayList<Twist> result = new ArrayList<Twist>();
+		
+		while (!solution.isEmpty()) {
+			Twist next = solution.remove(0);
+			
+			if (result.isEmpty()) {
+				result.add(next);
+				continue;
+			}
+			
+			Twist last = result.get(result.size() - 1);
+			int lMod = last.ordinal() % Twist.NUM_UNIQUE_TWIST;
+			int nMod = next.ordinal() % Twist.NUM_UNIQUE_TWIST;
+			
+			if (lMod == nMod) {
+				result.remove(result.size() - 1);
+				Twist swap = Twist.swap(last, next);
+				
+				if (swap != null) result.add(swap);
+			}
+			else result.add(next);
+		}
+		
+		return result;
 	}
 	
 	public int getProgress() {

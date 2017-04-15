@@ -7,6 +7,12 @@ public enum Twist {
 	
 	public static final int NUM_UNIQUE_TWIST = 12;
 	
+	public static final Integer[][] SWAP_MAP = {
+		{1,    2,    null},
+		{2,    null, 0},
+		{null, 0,    1}
+	};
+	
 	private static final int[] UP = {
 		67,19,35,51, 66,18,34,50, 65,17,33,49, 64,16,32,48,
 		0,12,15,3, 1,8,14,7, 2,4,13,11, 5,9,10,6
@@ -92,5 +98,17 @@ public enum Twist {
 	@Override
 	public String toString() {
 		return super.toString().replace('_', '\'');
+	}
+	
+	public static Twist swap(Twist last, Twist next) {
+		int l = last.ordinal();
+		int n = next.ordinal();
+		int lDiv = l / NUM_UNIQUE_TWIST;
+		int nDiv = n / NUM_UNIQUE_TWIST;
+		Integer change = SWAP_MAP[lDiv][nDiv];
+		
+		if (change == null) return null;
+		
+		return values()[change * NUM_UNIQUE_TWIST + l % NUM_UNIQUE_TWIST];
 	}
 }

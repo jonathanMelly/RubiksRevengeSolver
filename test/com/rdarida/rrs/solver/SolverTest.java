@@ -1,7 +1,6 @@
 package com.rdarida.rrs.solver;
 
-import static org.junit.Assert.assertTrue;
-import static org.junit.Assert.fail;
+import static org.junit.Assert.*;
 
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
@@ -370,11 +369,6 @@ public class SolverTest {
 		for (int i = 0, l = twists.length; i < l; i++) {
 			cube.turn(Twist.valueOf(twists[i]));
 		}
-	}
-	
-	@Ignore @Test
-	public void testPostProcess() {
-		fail("Not yet implemented");
 	}
 	
 	public static Cube fromString(String input) {
