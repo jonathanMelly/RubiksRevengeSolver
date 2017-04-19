@@ -55,7 +55,7 @@ public enum Corner {
 	}
 
 	/*
-	 * This methods takes a RevengeCube object and returns a list with the
+	 * This method takes a Cube object and returns a list with the
 	 * positions of the corner pieces accordingly.
 	 */
 	public static int[] getConfiguration(Cube cube) {
@@ -76,7 +76,7 @@ public enum Corner {
 	}
 	
 	/*
-	 * This methods takes a RevengeCube object and returns a list with the
+	 * This method takes a Cube object and returns a list with the
 	 * orientations of the corner pieces accordingly.
 	 */
 	public static int[] getOrientation(Cube cube) {
