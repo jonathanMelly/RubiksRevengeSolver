@@ -35,24 +35,8 @@ public class Phase7 extends Phase5 {
 			index += 2;
 		}
 		
-		int parity = calculateParity(dedgeConfiguration);
+		int parity = Dedge.getParity(dedgeConfiguration) == 0 ? 1 : 0;
 		result += (parity << index);
 		return result;
-	}
-	
-	private int calculateParity(int[] configuration) {
-		int permutationCount = 0;
-		
-		for (int idx = 0; idx < configuration.length; idx++) {
-			while (idx != configuration[idx]) {
-				permutationCount++;
-				int orgIndex = configuration[idx];
-				int swappedIndex = configuration[orgIndex];
-				configuration[orgIndex] = orgIndex;
-				configuration[idx] = swappedIndex;
-			}
-		}
-		
-		return (permutationCount) % 2 == 0 ? 1 : 0;
 	}
 }

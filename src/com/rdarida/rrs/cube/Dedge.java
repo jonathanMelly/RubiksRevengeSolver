@@ -98,7 +98,10 @@ public enum Dedge {
 	}
 	
 	public static int getParity(Cube cube) {
-		int[] array = getPairConfiguration(cube);
+		return getParity(getPairConfiguration(cube));
+	}
+	
+	public static int getParity(int[] array) {
 		int count = 0;
 		
 		for (int i = 0; i < array.length; i++) {
