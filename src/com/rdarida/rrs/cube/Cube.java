@@ -107,10 +107,19 @@ public class Cube {
 	public void scramble(int maxNumTwists) {
 		Twist[] twists = Twist.values();
 		Random random = new Random();
+		Twist last = null;
 		
 		for (int i = 0; i < maxNumTwists; i++) {
 			int index = random.nextInt(twists.length);
-			turn(twists[index]);
+			Twist twist = twists[index];
+			
+			if (twist.shouldAvoid(last)) {
+				i--;
+				continue;
+			}
+			
+			turn(twist);
+			last = twist;
 		}
 	}
 	
