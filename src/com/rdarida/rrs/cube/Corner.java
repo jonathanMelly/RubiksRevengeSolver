@@ -53,11 +53,7 @@ public enum Corner {
 		
 		return -1;
 	}
-
-	/*
-	 * This method takes a Cube object and returns a list with the
-	 * positions of the corner pieces accordingly.
-	 */
+	
 	public static int[] getConfiguration(Cube cube) {
 		byte[] colors = cube.getColors();
 		int[] result = new int[NUM_CORNERS];
@@ -75,10 +71,6 @@ public enum Corner {
 		return result;
 	}
 	
-	/*
-	 * This method takes a Cube object and returns a list with the
-	 * orientations of the corner pieces accordingly.
-	 */
 	public static int[] getOrientation(Cube cube) {
 		byte[] colors = cube.getColors();
 		int[] result = new int[NUM_CORNERS];
@@ -109,12 +101,6 @@ public enum Corner {
 		return count % 2;
 	}
 	
-	/*
-	 * Let say at the position of the corner DRB we find a cubie with colors
-	 * white, red an blue. These colors belong to the cubie ULF. Hence we know
-	 * in the current configuration cubie ULF is positioned at DRB. This method
-	 * creates a lookup table to quickly find the positions of the cubies.
-	 */
 	private static int[][][] generateCornerLookup() {
 		int[][][] result = new int[Cube.NUM_FACES][Cube.NUM_FACES][Cube.NUM_FACES];
 		
@@ -125,7 +111,6 @@ public enum Corner {
 			int y = corner.y / Cube.N2;
 			int z = corner.z / Cube.N2;
 			
-			// There are more than we need
 			result[x][y][z] = i;
 			result[x][z][y] = i;
 			result[y][x][z] = i;
@@ -137,10 +122,6 @@ public enum Corner {
 		return result;
 	}
 	
-	/*
-	 * Each corner has three possible orientations. This method creates a lookup
-	 * table to quickly determine the orientation of a cubie.
-	 */
 	private static int[][][] generateOrientationLookup() {
 		int[][][] result = new int[Cube.NUM_FACES][Cube.NUM_FACES][Cube.NUM_FACES];
 		

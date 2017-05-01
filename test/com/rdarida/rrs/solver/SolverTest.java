@@ -277,7 +277,7 @@ public class SolverTest {
 		}
 	}
 	
-	@Ignore @Test
+	@Test
 	public void testSolve10() {
 		String[] tests = {
 			"B F u' L D' r b F D' f2 l2 d u B2 u2 L' l2 u2 U' B f' d' u' F2 d2 u L' R d U' B2 l r' f2 L2 r B' f r' F2",
@@ -305,7 +305,7 @@ public class SolverTest {
 		solveTests(10, tests);
 	}
 	
-	@Ignore @Test
+	@Test
 	public void testSolve11() {
 		String[] tests = {
 			"L f F2 L' l D2 L U' f d2 F2 R U2 L2 R' u L2 r' f' u2 l' D r R2 u F d b d2 B' r R2 b L l' U L2 l' R' f' D2 u F u f U l2 D' l' r' F2 d' F d' r f' r d2 b R",

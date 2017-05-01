@@ -5,13 +5,6 @@ import com.rdarida.rrs.cube.Cube;
 import com.rdarida.rrs.cube.Dedge;
 import com.rdarida.rrs.cube.Twist;
 
-/*
- * 8!*3^7
- * 12!*2^11
- * The interesting part is the 7 and the 11, 
- * cornerConfiguration.length - 1 = 7,
- * dedgeConfiguration.length - 1 = 11.
- */
 public class Phase8 extends Phase5 {
 	public Phase8() {
 		super();
