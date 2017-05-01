@@ -82,14 +82,11 @@ public class Solver implements Runnable {
 					solution.add(twist);
 				}
 				
-				System.out.print(i + "(" + path.size() + ") ");
 				break;
 			}
 			
 			progress++;
 		}
-		
-		System.out.println();
 		
 		solution = postProcess(solution);
 		
