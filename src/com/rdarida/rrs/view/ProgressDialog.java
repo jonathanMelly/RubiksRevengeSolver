@@ -34,7 +34,7 @@ public class ProgressDialog extends JDialog implements ActionListener, WindowLis
 		panel.setBorder(new EmptyBorder(4, 4, 4, 4));
 		panel.setLayout(new GridLayout(3, 1, 6, 6));
 		
-		JLabel description = new JLabel("This can take upwards of 60 minutes.");
+		JLabel description = new JLabel("This can take upwards of 2 hours.");
 		panel.add(description);
 		
 		progressBar = new JProgressBar(0, 100);

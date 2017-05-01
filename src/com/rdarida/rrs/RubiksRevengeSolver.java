@@ -89,7 +89,7 @@ public class RubiksRevengeSolver {
 		double sumRuntime = 0f;
 		
 		for (int t = 0; t < numTests; t++) {
-			int numOfTwists = 40; //20 + 5 * (t / 20);
+			int numOfTwists = 40;
 			System.out.println("Test: " + (t + 1) + ", twists: " + numOfTwists);
 			
 			Cube cube = new Cube();
