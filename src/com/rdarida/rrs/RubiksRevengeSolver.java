@@ -106,7 +106,8 @@ public class RubiksRevengeSolver {
 			int size = solver.getSolution().size();
 			
 			if (size < minTwists) minTwists = size;
-			else if (maxTwists < size) maxTwists = size;
+			
+			if (maxTwists < size) maxTwists = size;
 			
 			sumTwists += size;
 			
